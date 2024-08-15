@@ -46,30 +46,84 @@ public class ConsoleUI implements View {
         }
     }
 
-    private void animalNameInputMessage(String animalType) {
-        System.out.println("Enter " + animalType.toLowerCase() + "'s name:");
-    }
-
-    private void birthDayInputMessage(String name) {
-        System.out.println("Enter " + name + "'s birth date with spaces in the format DD MM YYYY:");
-    }
-
     public void createAnimal() {
-        String animalType = getAnimalType();
-        if (animalType.equalsIgnoreCase("dog")) {
-            createDog(animalType);
-        } else if (animalType.equalsIgnoreCase("cat")) {
-            createCat(animalType);
-        } else if (animalType.equalsIgnoreCase("hamster")) {
-            createHamster(animalType);
-        } else if (animalType.equalsIgnoreCase("camel")) {
-            createCamel(animalType);
-        } else if (animalType.equalsIgnoreCase("horse")) {
-            createHorse(animalType);
-        } else if (animalType.equalsIgnoreCase("donkey")) {
-            createDonkey(animalType);
+        System.out.println("Please choose the animal you want to create:");
+        for (String animalType : animalTypes) {
+            System.out.println("• " + animalType);
         }
-        System.out.println("Animal has been created.\n");
+        String animalType = inputHandler.getAnimalTypeInput(animalTypes);
+
+        String name = getName(animalType);
+        LocalDate birthDate = getBirthDate(name);
+
+        switch (animalType.toLowerCase()) {
+            case "dog":
+                createDog(name, birthDate);
+                break;
+            case "cat":
+                createCat(name, birthDate);
+                break;
+            case "hamster":
+                createHamster(name, birthDate);
+                break;
+            case "camel":
+                createCamel(name, birthDate);
+                break;
+            case "horse":
+                createHorse(name, birthDate);
+                break;
+            case "donkey":
+                createDonkey(name, birthDate);
+                break;
+            default:
+                System.out.println("Unknown animal type.");
+        }
+    }
+
+    private String getName(String animalType) {
+        System.out.println("Enter " + animalType.toLowerCase() + "'s name:");
+        return inputHandler.getInput();
+    }
+
+    private LocalDate getBirthDate(String name) {
+        System.out.println("Enter " + name + "'s birth date with spaces in the format DD MM YYYY:");
+        return inputHandler.getBirthDateInput();
+    }
+
+    private void createDog(String name, LocalDate birthDate) {
+        System.out.println("Enter the dog's breed:");
+        String breed = inputHandler.getInput();
+        presenter.createDog(name, birthDate, breed);
+    }
+
+    private void createCat(String name, LocalDate birthDate) {
+        System.out.println("Enter the cat's color:");
+        String color = inputHandler.getInput();
+        presenter.createCat(name, birthDate, color);
+    }
+
+    private void createHamster(String name, LocalDate birthDate) {
+        System.out.println("Enter the hamster's wheel size:");
+        int wheelSize = inputHandler.getNumberInput("wheelSize");
+        presenter.createHamster(name, birthDate, wheelSize);
+    }
+
+    private void createCamel(String name, LocalDate birthDate) {
+        System.out.println("Enter the number of humps (1 or 2):");
+        int numberOfHumps = inputHandler.getNumberInput("humps");
+        presenter.createCamel(name, birthDate, numberOfHumps);
+    }
+
+    private void createHorse(String name, LocalDate birthDate) {
+        System.out.println("Enter the horse's weight:");
+        int weight = inputHandler.getNumberInput("weight");
+        presenter.createHorse(name, birthDate, weight);
+    }
+
+    private void createDonkey(String name, LocalDate birthDate) {
+        System.out.println("Enter the donkey's stamina:");
+        int stamina = inputHandler.getNumberInput("stamina");
+        presenter.createDonkey(name, birthDate, stamina);
     }
 
     public String getAnimalType() {
@@ -78,84 +132,6 @@ public class ConsoleUI implements View {
             System.out.println("• " + animalTypes[i]);
         }
         return inputHandler.getAnimalTypeInput(animalTypes);
-    }
-
-    private void createCamel(String animalType) {
-        animalNameInputMessage(animalType);
-        String name = inputHandler.getInput();
-
-        birthDayInputMessage(name);
-        LocalDate birthDate = inputHandler.getBirthDateInput();
-
-        System.out.println("Enter the number of humps of the " + animalType.toLowerCase() + " . 1 or 2:");
-        int numberOfHumps = inputHandler.getNumberInput("humps");
-
-        presenter.createCamel(name, birthDate, numberOfHumps);
-    }
-
-    private void createDonkey(String animalType) {
-        animalNameInputMessage(animalType);
-        String name = inputHandler.getInput();
-
-        birthDayInputMessage(name);
-        LocalDate birthDate = inputHandler.getBirthDateInput();
-
-        System.out.println("Enter the " + animalType.toLowerCase() + "'s stamina:");
-        int stamina = inputHandler.getNumberInput("stamina");
-
-        presenter.createDonkey(name, birthDate, stamina);
-    }
-
-    private void createHorse(String animalType) {
-        animalNameInputMessage(animalType);
-        String name = inputHandler.getInput();
-
-        birthDayInputMessage(name);
-        LocalDate birthDate = inputHandler.getBirthDateInput();
-
-        System.out.println("Enter the " + animalType.toLowerCase() + "'s weight:");
-        int weight = inputHandler.getNumberInput("weight");
-
-        presenter.createHorse(name, birthDate, weight);
-    }
-
-    private void createCat(String animalType) {
-        animalNameInputMessage(animalType);
-        String name = inputHandler.getInput();
-
-        birthDayInputMessage(name);
-        LocalDate birthDate = inputHandler.getBirthDateInput();
-
-        System.out.println("Enter the " + animalType.toLowerCase() + "'s color:");
-        String color = inputHandler.getInput();
-
-        presenter.createCat(name, birthDate, color);
-    }
-
-    private void createDog(String animalType) {
-        animalNameInputMessage(animalType);
-        String name = inputHandler.getInput();
-
-        birthDayInputMessage(name);
-        LocalDate birthDate = inputHandler.getBirthDateInput();
-
-        System.out.println("Enter the " + animalType.toLowerCase() + "'s breed:");
-        String breed = inputHandler.getInput();
-
-        presenter.createDog(name, birthDate, breed);
-    }
-
-    private void createHamster(String animalType) {
-        animalNameInputMessage(animalType);
-        String name = inputHandler.getInput();
-
-        birthDayInputMessage(name);
-        LocalDate birthDate = inputHandler.getBirthDateInput();
-
-        System.out.println("Enter the " + animalType.toLowerCase() + "'s wheel size:");
-        int wheelSize = inputHandler.getNumberInput("wheelSize");
-
-        presenter.createHamster(name, birthDate, wheelSize);
     }
 
     public void trainAnimal() {

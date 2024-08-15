@@ -86,35 +86,7 @@ public class InputHandler {
             }
             System.out.println(WRONG_CHOICE_MESSAGE);
             for (int i = 0; i < animalTypes.length; i++) {
-                System.out.println((i + 1) + ". " + animalTypes[i]);
-            }
-        }
-    }
-
-    public String getValueInput(String value) {
-        while (true) {
-            if (value.equalsIgnoreCase("dog") || value.equalsIgnoreCase("cat")) {
-                return getInput();
-            } else {
-                String input = getInput();
-                try {
-                    int number = Integer.parseInt(input);
-                    if (value.equalsIgnoreCase("camel")) {
-                        if (number == 1 || number == 2) {
-                            return Integer.toString(number);
-                        } else {
-                            System.out.println("Incorrect number for " + value + ". Please enter 1 or 2.");
-                        }
-                    } else {
-                        if (number > 0) {
-                            return Integer.toString(number);
-                        } else {
-                            System.out.println("Incorrect number for " + value + ". Please enter a positive number.");
-                        }
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid format. Please enter a number.");
-                }
+                System.out.println("• " + animalTypes[i]);
             }
         }
     }
