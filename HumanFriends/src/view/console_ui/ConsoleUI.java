@@ -75,7 +75,7 @@ public class ConsoleUI implements View {
     public String getAnimalType() {
         System.out.println("Please choose the animal you want to create:");
         for (int i = 0; i < animalTypes.length; i++) {
-            System.out.println((i + 1) + ". " + animalTypes[i]);
+            System.out.println("• " + animalTypes[i]);
         }
         return inputHandler.getAnimalTypeInput(animalTypes);
     }
