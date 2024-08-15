@@ -97,3 +97,9 @@ SELECT ID, Name, Type, BirthDate, Commands, 'PackAnimals' AS Source
 FROM PackAnimals
 WHERE Type IN ('Horse', 'Donkey');
 ```
+
+### Выход из программы MySQL
+
+```sh
+exit
+```
