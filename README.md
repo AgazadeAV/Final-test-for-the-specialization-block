@@ -4,4 +4,5 @@
 ## [1. Операционные системы и виртуализация (Linux)](https://github.com/AgazadeAV/Final-test-for-the-specialization-block/tree/main/linux_commands "Операционные системы и виртуализация (Linux)")
 ## [2. Диаграмма классов](https://github.com/AgazadeAV/Final-test-for-the-specialization-block/tree/main/class_diagram "Диаграмма классов")
 ## [3. Работа с MySQL в Linux](https://github.com/AgazadeAV/Final-test-for-the-specialization-block/tree/main/mysql "Работа с MySQL в Linux")
-## [4. Объектно-ориентированное программирование](https://github.com/AgazadeAV/Final-test-for-the-specialization-block/tree/main/HumanFriends/src "Объектно-ориентированное программирование")
+## [4. Объектно-ориентированное программирование](https://github.com/AgazadeAV/Final-test-for-the-specialization-block/tree/main/HumanFriends "Объектно-ориентированное программирование")
+## [5. Сертификат о прохождении тестирования по «Итоговое тестирование по освоению специализации Программист»](https://github.com/AgazadeAV/Final-test-for-the-specialization-block/tree/main/certificate "Сертификат о прохождении тестирования по «Итоговое тестирование по освоению специализации Программист»")

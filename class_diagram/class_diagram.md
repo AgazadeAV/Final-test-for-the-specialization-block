@@ -1,2 +1,2 @@
 # Представляю вашему вниманию диаграмму классов
-![Class diagram](class_diagram.png)
+![Диаграмма классов](class_diagram.png)
