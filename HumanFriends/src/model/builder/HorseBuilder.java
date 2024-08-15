@@ -1,6 +1,6 @@
-package model.animal.pack_animal.horse;
+package model.builder;
 
-import model.animal.AnimalBuilder;
+import model.animal.pack_animal.horse.Horse;
 import model.animal.IdGenerator;
 
 public class HorseBuilder extends AnimalBuilder<HorseBuilder> {

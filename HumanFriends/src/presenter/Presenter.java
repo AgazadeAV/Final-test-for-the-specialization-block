@@ -4,6 +4,7 @@ import model.service.Service;
 import view.View;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Presenter {
     private View view;
@@ -76,5 +77,9 @@ public class Presenter {
 
     public void setPath(String filePath) {
         service.setPath(filePath);
+    }
+
+    public List<String> animalTypes() {
+        return service.animalTypes();
     }
 }

@@ -1,6 +1,6 @@
-package model.animal.pack_animal.camel;
+package model.builder;
 
-import model.animal.AnimalBuilder;
+import model.animal.pack_animal.camel.Camel;
 import model.animal.IdGenerator;
 
 public class CamelBuilder extends AnimalBuilder<CamelBuilder> {

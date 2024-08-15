@@ -1,4 +1,7 @@
-package model.animal;
+package model.builder;
+
+import model.animal.Animal;
+import model.animal.IdGenerator;
 
 import java.time.LocalDate;
 
