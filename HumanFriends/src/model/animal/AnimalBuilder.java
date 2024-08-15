@@ -25,4 +25,3 @@ public abstract class AnimalBuilder<T extends AnimalBuilder<T>> {
 
     public abstract Animal build();
 }
-
