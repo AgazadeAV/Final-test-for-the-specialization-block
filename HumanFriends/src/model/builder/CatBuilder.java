@@ -1,6 +1,6 @@
-package model.animal.pet.cat;
+package model.builder;
 
-import model.animal.AnimalBuilder;
+import model.animal.pet.cat.Cat;
 import model.animal.IdGenerator;
 
 public class CatBuilder extends AnimalBuilder<CatBuilder> {

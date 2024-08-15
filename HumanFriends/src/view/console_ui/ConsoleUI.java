@@ -4,11 +4,12 @@ import presenter.Presenter;
 import view.View;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleUI implements View {
     private String path = "src/model/writer/serialized_files/animal_registry.ser";
-    private String[] animalTypes = {"Dog", "Cat", "Hamster", "Horse", "Camel", "Donkey"};
+    private List<String> animalTypes;
     private MenuHandler menuHandler;
     private Presenter presenter;
     private InputHandler inputHandler;
@@ -19,6 +20,7 @@ public class ConsoleUI implements View {
         presenter = new Presenter(this);
         menuHandler = new MenuHandler(this);
         work = true;
+        animalTypes = presenter.animalTypes();
         presenter.setPath(path);
     }
 
@@ -124,14 +126,6 @@ public class ConsoleUI implements View {
         System.out.println("Enter the donkey's stamina:");
         int stamina = inputHandler.getNumberInput("stamina");
         presenter.createDonkey(name, birthDate, stamina);
-    }
-
-    public String getAnimalType() {
-        System.out.println("Please choose the animal you want to create:");
-        for (int i = 0; i < animalTypes.length; i++) {
-            System.out.println("• " + animalTypes[i]);
-        }
-        return inputHandler.getAnimalTypeInput(animalTypes);
     }
 
     public void trainAnimal() {

@@ -2,6 +2,7 @@ package view.console_ui;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.HashSet;
@@ -90,7 +91,7 @@ public class InputHandler {
         return false;
     }
 
-    public String getAnimalTypeInput(String[] animalTypes) {
+    public String getAnimalTypeInput(List<String> animalTypes) {
         Set<String> animalSet = new HashSet<>();
         for (String animal : animalTypes) {
             animalSet.add(animal.toLowerCase());

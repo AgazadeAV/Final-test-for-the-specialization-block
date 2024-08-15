@@ -1,6 +1,6 @@
-package model.animal.pet.hamster;
+package model.builder;
 
-import model.animal.AnimalBuilder;
+import model.animal.pet.hamster.Hamster;
 import model.animal.IdGenerator;
 
 public class HamsterBuilder extends AnimalBuilder<HamsterBuilder> {

@@ -3,29 +3,32 @@ package model.service;
 import model.animal.Animal;
 import model.animal.IdGenerator;
 import model.animal.pack_animal.camel.Camel;
-import model.animal.pack_animal.camel.CamelBuilder;
+import model.builder.CamelBuilder;
 import model.animal.pack_animal.donkey.Donkey;
-import model.animal.pack_animal.donkey.DonkeyBuilder;
+import model.builder.DonkeyBuilder;
 import model.animal.pack_animal.horse.Horse;
-import model.animal.pack_animal.horse.HorseBuilder;
+import model.builder.HorseBuilder;
 import model.animal.pet.cat.Cat;
-import model.animal.pet.cat.CatBuilder;
+import model.builder.CatBuilder;
 import model.animal.pet.dog.Dog;
-import model.animal.pet.dog.DogBuilder;
+import model.builder.DogBuilder;
 import model.animal.pet.hamster.Hamster;
-import model.animal.pet.hamster.HamsterBuilder;
+import model.builder.HamsterBuilder;
 import model.animal_registry.AnimalRegistry;
+import model.package_scanner.PackageScanner;
 import model.writer.FileHandler;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public class Service {
+    PackageScanner packageScanner;
     FileHandler fileHandler;
     AnimalRegistry animalRegistry;
     IdGenerator idGenerator;
 
     public Service() {
+        packageScanner = new PackageScanner("model.animal");
         fileHandler = new FileHandler();
         animalRegistry = new AnimalRegistry();
         idGenerator = new IdGenerator();
@@ -131,5 +134,9 @@ public class Service {
 
     public void setPath(String filePath) {
         fileHandler.setPath(filePath);
+    }
+
+    public List<String> animalTypes() {
+        return packageScanner.getSimpleClassNamesInLastPackages();
     }
 }
